@@ -1,0 +1,93 @@
+<!--Success.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMECOOK DELIVERY SYSTEM | Approval Successful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #50a3a2;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .success-message {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .success-icon {
+            color: #4caf50;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-text {
+            font-size: 1.5rem;
+        }
+
+        .back-to-dashboard {
+            display: block;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .back-button {
+            background-color: #50a3a2;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .back-button:hover {
+            background-color: #408c89;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>HOMECOOK DELIVERY SYSTEM</h1>
+        <div class="header">
+            <h2>Approve New Registration Page</h2>
+        </div>
+    </div>
+
+    <div class="success-message">
+        <div class="success-icon">&#10004;</div>
+        <div class="success-text">Approval Successful!</div>
+    </div>
+
+    <!-- Link back to the dashboard or home page -->
+    <div class="back-to-dashboard">
+        <a href="{{ url_for('dashboard') }}" class="back-button">Back to Dashboard</a>
+    </div>
+</div>
+
+</body>
+</html>

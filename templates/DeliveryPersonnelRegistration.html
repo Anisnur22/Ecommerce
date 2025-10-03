@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMECOOK DELIVERY SYSTEM | Delivery Personnel Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #50a3a2;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .subheader {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        main {
+            padding: 2rem;
+            background-color: white;
+            margin: 2rem 0;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 1rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.25rem;
+        }
+
+        input[type="submit"] {
+            background-color: #50a3a2;
+            color: white;
+            padding: 0.5rem;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #408c89;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>HOMECOOK DELIVERY SYSTEM</h1>
+        <div class="subheader">
+            <h2>Delivery Personnel Registration</h2>
+        </div>
+    </div>
+
+    <main>
+        <!-- Delivery Personnel Registration Form - Page 1 -->
+        <form action="/delivery-personnel-registration-submit" method="post">
+            <label for="first-name">Delivery Personnel Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Delivery Personnel Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm_password" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="license-no">Driver's License Number</label>
+            <input type="text" id="license-no" name="license_no" required>
+
+            <label for="previous-vehicles">Vehicles Used Before</label>
+            <textarea id="previous-vehicles" name="previous_vehicles" rows="4" required></textarea>
+
+            <input type="submit" value="Register">
+        </form>
+    </main>
+</div>
+
+</body>
+</html>

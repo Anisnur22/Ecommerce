@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMECOOK DELIVERY SYSTEM | Delivery Personnel Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #50a3a2;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .logout-button {
+            background-color: #ff5e5e;
+            color: white;
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: inline-block;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        .logout-button:hover {
+            background-color: #bc0d0d;
+        }
+        
+
+        .dashboard {
+            margin-top: 2rem;
+            text-align: center;
+            text-decoration: none;
+
+        }
+
+        .dashboard-item  {
+            background-color: #50a3a2;
+            color: #fff;
+            border: 1px solid #ddd;
+            width: 70%;
+            padding: 1rem;
+            margin: 0 auto 1rem auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            text-decoration: none;
+
+
+        }
+
+        .dashboard-item a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .dashboard-item:hover {
+            background-color: #408c89;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>HOMECOOK DELIVERY SYSTEM</h1>
+            <h2>Delivery Personnel Home Page</h2>
+            <a href="/delivery-personnel-logout" class="logout-button">Logout</a>
+        </div>
+        <div style="text-align: center">
+            <h1>Welcome, {{ name }}</h1>
+            <p>Delivery Personnel ID: {{ id }}</p>
+        </div>
+
+        <div class="dashboard">
+            <!-- Dashboard Items -->
+            <div class="dashboard-item">
+                <a href="DeliveryPersonnelReadyOrders.html">Ready Orders</a>
+            </div>
+
+            <div class="dashboard-item">
+                <a href="DeliveryPersonnelDeliveryStatus.html">Delivery Status Update</a>
+            </div>
+
+            <div class="dashboard-item">
+                <a href="DeliveryHistory.html">Delivery History</a>
+            </div>
+
+            <div class="dashboard-item">
+                <a href="DeliveryPersonnelFeedBack.html"> FeedBack</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

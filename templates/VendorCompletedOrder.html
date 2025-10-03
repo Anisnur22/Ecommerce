@@ -1,0 +1,144 @@
+<!--VendorCompletedOrder.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMECOOK DELIVERY SYSTEM | Complete Orders</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #50a3a2;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+        .logout-button {
+            background-color: #ff0000;
+            color: white;
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: inline-block;
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-button:hover {
+            background-color: #bc0d0d;
+        }
+
+        .Back-button {
+            background-color: #04453a;
+            color: white;
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: inline-block;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+
+        .Back-button:hover {
+            background-color: #aec56b;
+        }
+
+        .complete-orders {
+            margin-top: 2rem;
+        }
+
+        .order {
+            border: 1px solid #ccc;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .view-button {
+            background-color: #50a3a2;
+            color: white;
+            padding: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .view-button:hover {
+            background-color: #408c89;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>HOMECOOK DELIVERY SYSTEM</h1>
+        <div class="subheader">
+            <h2>Vendor Completed Order Page</h2>
+        </div>
+    </div>
+
+<!-- Logout Button -->
+<a href="VendorLoginPage.html" class="logout-button">Logout</a>
+
+ <!-- Back Button -->
+ <a href="VendorOrderPage.html" class="Back-button"> Back</a>
+
+    <form action="VendorFeedbackPage.html" method="post">
+    <div class="complete-orders">
+        <!-- Complete Orders -->
+        <div class="order">
+            <p>Order ID: 503</p>
+            <p>Order: 1 Dumpling Noodle Soup</p>
+            <button class="view-button" onclick="viewFeedback(503)">View</button>
+        </div>
+
+        <div class="order">
+            <p>Order ID: 398</p>
+            <p>Order: 3 Dumpling Noodle Soup, 2 Nasi Lemak</p>
+            <button class="view-button" onclick="viewFeedback(398)">View</button>
+        </div>
+
+        <div class="order">
+            <p>Order ID: 962</p>
+            <p>Order: 6 Nasi Lemak</p>
+            <button class="view-button" onclick="viewFeedback(962)">View</button>
+        </div>
+    </div>
+</div>
+
+<script>
+       
+    function viewFeedback(orderId) {
+        // Implement logic to navigate to the feedback page for the order with the specified orderId
+        alert('View feedback for Order ' + orderId);
+        // You may want to use window.location or other navigation methods
+    }
+</script>
+
+</body>
+</html>

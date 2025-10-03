@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Submitted</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .confirmation {
+            text-align: center;
+        }
+
+        .circle {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #50a3a2;
+            margin-bottom: 20px;
+        }
+
+        .checkmark {
+            font-size: 48px;
+            color: #50a3a2;
+            line-height: 100px; 
+        }
+
+        h2 {
+            margin: 0;
+        }
+
+        #next-button {
+            background-color: #50a3a2;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+            margin-top: 20px;
+        }
+
+        #next-button:hover {
+            background-color: #408c89;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation">
+        <div class="circle">
+            <div class="checkmark">&#10004;</div>
+        </div>
+        <h2>Order Submitted</h2>
+        <a href="{{ url_for('customer_track') }}" id="next-button">Next</a>
+    </div>
+</body>
+</html>

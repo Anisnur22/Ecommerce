@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMECOOK DELIVERY SYSTEM | Customer Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #50a3a2;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .subheader {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        main {
+            padding: 2rem;
+            background-color: white;
+            margin: 2rem 0;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 1rem;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.25rem;
+        }
+
+        input[type="submit"] {
+            background-color: #50a3a2;
+            color: white;
+            padding: 0.5rem;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #408c89;
+        }
+
+        .Back-button {
+            background-color: #04453a;
+            color: white;
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: inline-block;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+
+        .Back-button:hover {
+            background-color: #aec56b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>HOMECOOK DELIVERY SYSTEM</h1>
+        <div class="subheader">
+            <h2>Customer Login Page</h2>
+        </div>
+    </div>
+
+    <a href="/" class="Back-button"> Back</a>
+
+    <main>
+        <form action="/customer-login" method="post">
+            <label for="customer_id">Customer ID</label>
+            <input type="text" id="customer_id" name="customer_id" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Log In">
+        </form>
+    </main>
+</div>
+
+</body>
+</html>

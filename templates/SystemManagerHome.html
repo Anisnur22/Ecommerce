@@ -1,0 +1,112 @@
+<!--SystemManagerHome.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMECOOK DELIVERY SYSTEM | System Manager Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #50a3a2;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .logout-button {
+            background-color: #ff0000;
+            color: white;
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: inline-block;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        .logout-button:hover {
+            background-color: #bc0d0d;
+        }
+
+        .home-buttons {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column; /* Display buttons in a column */
+            align-items: center; /* Center buttons horizontally */
+        }
+
+        .home-button {
+            background-color: #50a3a2;
+            color: white;
+            padding: 1rem;
+            border: none;
+            cursor: pointer;
+            margin: 0.5rem;
+            width: 70%; /* Adjust as needed */
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: inline-block;
+        }
+
+        .home-button:hover {
+            background-color: #408c89;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>HOMECOOK DELIVERY SYSTEM</h1>
+        <div class="header">
+            <h2>System Manager Home Page</h2>
+        </div>
+    </div>
+    <div style="text-align: center">
+        <h1>Welcome, {{ name }}</h1>
+        <p>System Manager ID: {{ id }}</p>
+    </div>
+
+    <!-- Logout Button -->
+    <a href="/logout" class="logout-button">Logout</a>
+
+    <!-- <a href="SystemManagerLogin.html.html"> -->
+
+    <div class="home-buttons">
+        <!-- Home Buttons -->
+        <a href="{{ url_for('view_vendor') }}" class="home-button">View Vendors</a>
+        <a href="{{ url_for('view_customer') }}" class="home-button">View Customers</a>
+        <a href="{{ url_for('view_sales_report') }}" class="home-button">View Sales Report</a>
+        <a href="{{ url_for('view_delivery_report') }}" class="home-button">View Delivery Report</a>
+        <a href="{{ url_for('approve_new_registration') }}" class="home-button">Approve New Registration</a>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+

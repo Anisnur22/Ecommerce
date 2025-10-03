@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMECOOK DELIVERY SYSTEM | Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #50a3a2;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .logout-button {
+            background-color: #f44336;
+            color: white;
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: inline-block;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        .logout-button:hover {
+            background-color: #d32f2f;
+        }
+
+        .Back-button {
+            background-color: #04453a;
+            color: white;
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: inline-block;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+
+        .Back-button:hover {
+            background-color: #aec56b;
+        }
+
+        .customer-list {
+            margin-top: 2rem;
+        }   
+
+        .customer-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .customer-item:hover {
+            background-color: #f5f5f5;
+        }
+
+        .restaurant-info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .order-list {
+            display: none;
+            padding-left: 20px; /* Indentation for order list */
+        }
+
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+        }
+
+        .footer {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between; /* Align items to the start and end of the container */
+            align-items: center; /* Vertically center items */
+            list-style-type: none; /* Remove bullet points from the list */
+        }   
+
+        .checkout-button {
+            background-color: #50a3a2; /* Adjust button color as needed */
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .checkout-button:hover {
+            background-color: #04453a; /* Adjust hover color as needed */
+        }
+
+        .divider {
+            border-top: 1px solid #ddd;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+        }
+
+        /* Hide the default arrows in the quantity input */
+        .quantity-input::-webkit-inner-spin-button,
+        .quantity-input::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0; /* You might need to adjust the margin */
+        }
+
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            border: 1px solid #ddd; /* Add a border to make it more visually distinguishable */
+            border-radius: 4px; /* Add border radius for better appearance */
+        }
+
+        .quantity-input button {
+            background-color: #007bff; /* Adjust button color as needed */
+            color: white;
+            padding: 0.2rem 0.4rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .quantity-input button:hover {
+            background-color: #0056b3; /* Adjust hover color as needed */
+        }
+
+    </style>
+   <script>
+        function toggleOrderList(id) {
+    var orderList = document.getElementById(id);
+    orderList.style.display = (orderList.style.display === 'none' || orderList.style.display === '') ? 'block' : 'none';
+}
+
+function decreaseQuantity(quantityId) {
+    var quantityElement = document.getElementById(quantityId);
+    var currentQuantity = parseInt(quantityElement.value);
+    if (currentQuantity > 0) {
+        quantityElement.value = currentQuantity - 1;
+        updateTotalPrice(quantityId);
+    }
+}
+
+function increaseQuantity(quantityId) {
+    var quantityElement = document.getElementById(quantityId);
+    var currentQuantity = parseInt(quantityElement.value);
+    quantityElement.value = currentQuantity + 1;
+    updateTotalPrice(quantityId);
+}
+
+function handleQuantityButtonClick(event, quantityId, operation) {
+            event.stopPropagation(); // Prevent event propagation
+            if (operation === 'decrease') {
+                decreaseQuantity(quantityId);
+            } else if (operation === 'increase') {
+                increaseQuantity(quantityId);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+    var quantityInputs = document.querySelectorAll('.quantity-input');
+    quantityInputs.forEach(function(input) {
+        input.addEventListener('change', function() {
+            // Extract vendor ID from the input's ID
+            var vendorId = input.id.split('-')[0];
+            updateTotalPrice(vendorId);
+        });
+    });
+});
+
+function updateTotalPrice(vendorId) {
+    var quantityInputs = document.querySelectorAll('.quantity-input[id^="' + vendorId + '"]');
+    var totalPrice = 0;
+    quantityInputs.forEach(function(input) {
+        var quantity = parseInt(input.value);
+        var itemId = input.id.split('-')[1];
+        var priceElement = document.getElementById('order-price-' + itemId);
+        var price = parseFloat(priceElement.dataset.price);
+        totalPrice += quantity * price;
+    });
+
+    // Update total price element for the vendor
+    var totalElementId = 'order-total-' + vendorId;
+    var totalPriceElement = document.getElementById(totalElementId);
+    totalPriceElement.innerText = 'RM ' + totalPrice.toFixed(2);
+}
+
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>HOMECOOK DELIVERY SYSTEM</h1>
+        <div class="header">
+            <h2>Order Page</h2>
+        </div>
+    </div>
+
+    <!-- Logout Button -->
+    <a href="{{ url_for('customer_logout') }}" class="logout-button">Logout</a>
+
+    <!-- Back Button -->
+    <a href="{{ url_for('customer_home') }}" class="Back-button"> Back</a>
+
+    <div class="customer-list">
+        {% for vendor in vendors %}
+        <div class="customer-item" onclick="toggleOrderList('order-list-{{ vendor.VendorID }}')">
+            <div class="restaurant-info"><strong>{{ vendor.Name }}</strong></div>
+            <div id="order-list-{{ vendor.VendorID }}" class="order-list">
+
+                <strong>Order List:</strong>
+                <ul>
+                    {% for item in vendor.items %}
+                    <li>{{ item.ItemName }} 
+                        <span id="order-price-{{ item.ItemID }}" data-price="{{ item.ItemPrice }}">RM {{ item.ItemPrice }}</span>
+                        <button onclick="handleQuantityButtonClick(event, '{{ vendor.VendorID }}-{{ item.ItemID }}', 'decrease')">-</button>
+                        <input type="number" class="quantity-input" value="0" id="{{ vendor.VendorID }}-{{ item.ItemID }}">
+                        <button onclick="handleQuantityButtonClick(event, '{{ vendor.VendorID }}-{{ item.ItemID }}', 'increase')">+</button>
+                    </li>
+                    {% endfor %}
+                </ul>
+                
+                <div class="divider"></div>
+                <ul class="footer">
+
+                    <li>Total: <span id="order-total-{{ vendor.VendorID }}">RM 0.00</span></li>
+                    <li><button class="checkout-button" onclick="redirectToCheckout('CustomerCheckout.html', '{{ vendor.Name }}')">Checkout</button></li>
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+</div>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>READY ORDERS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        header {
+            background-color: #50a3a2;
+            color: #fff;
+            padding: 1rem;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 1rem;
+        }
+
+        .orders {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #f4f4f4;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .orders h2 {
+            margin-top: 0;
+        }
+
+        .order {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            position: relative;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .order h3 {
+            margin-top: 0;
+        }
+
+        .collect-checkbox {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-top: 0.5rem;
+            margin-right: 0.5rem;
+            transform: scale(1.5);
+        }
+
+        #collect-all {
+            display: block;
+            margin: 1rem auto;
+            background-color: #50a3a2;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #collect-all:hover {
+            background-color: #408c89;
+        }
+
+        #collect-all-link {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ready Orders</h1>
+        <nav>
+            <ul>
+                <li><a href="DeliveryPersonnelHomePage.html">Home</a></li>
+                <li><a href="DeliveryPersonnelDeliveryStatus.html">Status Update</a></li>
+                <li><a href="DeliveryHistory.html">History</a></li>
+                <li><a href="DeliveryPersonnelFeedBack.html">FeedBack</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="orders">
+            <h2>Ready Orders</h2>
+            <!-- Display ready orders -->
+            <div class="order">
+                <input type="checkbox" id="order1" name="order1" class="collect-checkbox">
+                <h3>Order #1234</h3>
+                <p>Customer: John Doe</p>
+                <p>Address: 123 Main St</p>
+                <p>Payment Method: Cash on delivery</p>
+                <p>Items: Item 1, Item 2, Item 3</p>
+            </div>
+
+            <div class="order">
+                <input type="checkbox" id="order2" name="order2" class="collect-checkbox">
+                <h3>Order #5678</h3>
+                <p>Customer: Jane Smith</p>
+                <p>Address: 456 Elm St</p>
+                <p>Payment Method: Cash on delivery</p>
+                <p>Items: Item A, Item B</p>
+            </div>
+
+        </section>
+
+        <a id="collect-all-link" href="collected.html">
+            <button id="collect-all">Collect Orders</button>
+        </a>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

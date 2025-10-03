@@ -1,0 +1,116 @@
+<!--VendorRegistration1.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMECOOK DELIVERY SYSTEM | Vendor Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #50a3a2;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .subheader {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        main {
+            padding: 2rem;
+            background-color: white;
+            margin: 2rem 0;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 1rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="phone number"],
+        input[type="email address"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.25rem;
+        }
+
+        input[type="submit"] {
+            background-color: #50a3a2;
+            color: white;
+            padding: 0.5rem;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #408c89;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>HOMECOOK DELIVERY SYSTEM</h1>
+        <div class="subheader">
+            <h2>Vendor Registration</h2>
+        </div>
+    </div>
+
+    <main>
+        <!-- Vendor Registration Form -->
+        <form action="/vendor-registration-submit" method="post">
+            <label for="vendor-name">Vendor Name</label>
+            <input type="text" id="vendor-name" name="vendor_name" required>
+
+            <label for="vendor-email">Vendor Email</label>
+            <input type="email" id="vendor-email" name="vendor_email" required>
+
+            <label for="vendor-phone-number">Vendor Phone number</label>
+            <input type="phone number" id="vendor-phone-number" name="vendor_phone_number" required>
+
+            <label for="vendor-address">Vendor Address</Address></label>
+            <input type="address" id="vendor-address" name="vendor_address" required>
+
+            <label for="vendor-password">Vendor Password</label>
+            <input type="password" id="vendor-password" name="vendor_password" required>
+
+            <label for="confirm-vendor-password">Confirm Vendor Password</label>
+            <input type="password" id="confirm-vendor-password" name="confirm_vendor_password" required>
+
+            <input type="submit" value="Register">
+        </form>
+    </main>
+</div>
+
+</body>
+</html>

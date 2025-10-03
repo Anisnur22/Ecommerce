@@ -1,0 +1,114 @@
+<!-- VendorMenu.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMECOOK DELIVERY SYSTEM | Vendor Menu</title>
+    <style>
+        /* Styles remain the same as the previous example */
+
+        .edit-mode {
+            border: 2px solid #50a3a2;
+        }
+
+        .edit-mode form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .edit-mode input {
+            padding: 0.5rem;
+        }
+
+        .edit-button {
+            background-color: #50a3a2;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .edit-button:hover {
+            background-color: #408c89;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="header">
+        <h1>HOMECOOK DELIVERY SYSTEM</h1>
+        <h2>Vendor Menu</h2>
+        <!-- Logout Button -->
+        <a href="Login.html" class="logout-button">Logout</a>
+    </div>
+
+    <div class="menu-list" id="menuList">
+        <!-- Sample Menu Items (Replace with dynamic data from your database) -->
+        <div class="menu-item" data-id="1">
+            <h3>Dumpling Noodle Soup</h3>
+            <p>A delicious bowl of noodle soup with dumplings.</p>
+            <button class="edit-button" onclick="showEditForm(1)">Edit</button>
+        </div>
+
+        <!-- Add similar structure for other menu items -->
+    </div>
+</div>
+
+<script>
+    function showEditForm(itemId) {
+        const menuItem = document.querySelector(`.menu-item[data-id="${itemId}"]`);
+        const editForm = document.createElement('form');
+        editForm.innerHTML = `
+            <label for="edit-name">Name:</label>
+            <input type="text" id="edit-name" required value="${menuItem.querySelector('h3').textContent}">
+
+            <label for="edit-category">Category:</label>
+            <input type="text" id="edit-category" required>
+
+            <label for="edit-price">Price:</label>
+            <input type="text" id="edit-price" required>
+
+            <label for="edit-description">Description:</label>
+            <input type="text" id="edit-description" required value="${menuItem.querySelector('p').textContent}">
+
+            <label for="edit-availability">Availability:</label>
+            <input type="text" id="edit-availability" required>
+            
+            <button type="button" onclick="updateMenuItem(${itemId})">Save</button>
+        `;
+        menuItem.innerHTML = '';
+        menuItem.appendChild(editForm);
+        menuItem.classList.add('edit-mode');
+    }
+
+    function updateMenuItem(itemId) {
+        const name = document.getElementById('edit-name').value;
+        const category = document.getElementById('edit-category').value;
+        const price = document.getElementById('edit-price').value;
+        const description = document.getElementById('edit-description').value;
+        const availability = document.getElementById('edit-availability').value;
+
+        // Perform the update operation using AJAX or other methods
+        // Update the content of the menu item with the new values
+        const menuItem = document.querySelector(`.menu-item[data-id="${itemId}"]`);
+        menuItem.innerHTML = `
+            <h3>${name}</h3>
+            <p>${description}</p>
+            <button class="edit-button" onclick="showEditForm(${itemId})">Edit</button>
+        `;
+        menuItem.classList.remove('edit-mode');
+    }
+</script>
+
+</body>
+</html>
+
+

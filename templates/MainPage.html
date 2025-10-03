@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMECOOK DELIVERY SYSTEM | Main Screen</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .header {
+            background-color: #50a3a2;
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 2px;
+        }
+
+        .welcome-message {
+            margin-top: 1.5rem;
+            font-size: 1.5rem;
+            color: #555;
+        }
+
+        .login-buttons, .registration-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .login-buttons button, .registration-buttons button {
+            background-color: #50a3a2;
+            color: white;
+            padding: 1.5rem 3rem;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 2.5rem;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+            outline: none;
+        }
+
+        .login-buttons button:hover, .registration-buttons button:hover {
+            background-color: #408c89;
+        }
+
+        .registration-prompt {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .registration-prompt a {
+            color: #50a3a2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .registration-prompt a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>HOMECOOK DELIVERY SYSTEM</h1>
+    </div>
+
+    <div class="welcome-message">
+        <p>Hey, welcome! Join us in the world of HomeCook Delivery.</p>
+    </div>
+
+    <div class="login-buttons">
+        <!-- Login Buttons -->
+        <button onclick="location.href='/customer-login'">Customer Login</button>
+        <button onclick="location.href='/vendor-login'">Vendor Login</button>
+        <button onclick="location.href='/delivery-personnel-login'">Delivery Personnel Login</button>
+        <button onclick="location.href='/system-manager-login'">System Manager Login</button>
+    </div>
+
+    <div class="registration-prompt">
+        <p>Not one of us? Register as a <a href="/customer-registration">Customer</a>, <a href="/vendor-registration">Vendor</a>, or <a href="/delivery-personnel-registration">Delivery Personnel</a> now!</p>
+    </div>
+</div>
+
+</body>
+</html>
+
+

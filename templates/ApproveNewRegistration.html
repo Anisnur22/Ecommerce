@@ -1,0 +1,156 @@
+<!--ApproveNewRegistration.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMECOOK DELIVERY SYSTEM | Approve New Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #50a3a2;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .logout-button {
+            background-color: #f44336;
+            color: white;
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: inline-block;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        .logout-button:hover {
+            background-color: #d32f2f;
+        }
+
+        
+        .Back-button {
+            background-color: #04453a;
+            color: white;
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: inline-block;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+
+        .Back-button:hover {
+            background-color: #aec56b;
+        }
+
+        .registration-info {
+            margin-top: 2rem;
+        }
+
+        .vendor-info, .customer-info {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-label {
+            font-weight: bold;
+        }
+
+        .verification-buttons {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .verification-button {
+            background-color: #4caf50;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none; /* Added to remove underline on hover */
+            text-align: center;
+            display: inline-block;
+        }
+
+        .verification-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>HOMECOOK DELIVERY SYSTEM</h1>
+            <div class="header">
+                <h2>Approve New Registration Page</h2>
+            </div>
+        </div>
+    
+        <!-- Logout Button -->
+        <a href="/logout" class="logout-button">Logout</a>
+    
+        <!-- Back Button -->
+        <a href="{{ url_for('home') }}" class="Back-button"> Back</a>
+    
+        <div class="registration-info">
+            <!-- Vendor Information -->
+            <div class="vendor-info">
+                <h2>Pending Vendor Registrations</h2>
+                <ul>
+                {% for vendor_registration in vendor_registrations %}
+                    <li>{{ vendor_registration.VendorName }} - {{ vendor_registration.VendorEmail }}</li>
+                    <!-- Approve link for vendor registration -->
+                    <a href="{{ url_for('approve_vendor', registration_id=vendor_registration.RegistrationID) }}" class="verification-button">Approve</a>
+                {% endfor %}
+                </ul>
+        
+                <h2>Pending Customer Registrations</h2>
+                <ul>
+                {% for customer_registration in customer_registrations %}
+                    <li>{{ customer_registration.CustomerName }} - {{ customer_registration.CustomerEmail }}</li>
+                    <!-- Approve link for customer registration -->
+                    <a href="{{ url_for('approve_customer', registration_id=customer_registration.RegistrationID) }}" class="verification-button">Approve</a>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    </body>
+    </html>
+
+

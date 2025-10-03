@@ -1,0 +1,110 @@
+<!--VendorHome.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMECOOK DELIVERY SYSTEM | Vendor Home</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #50a3a2;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h1 {
+            margin: 1;
+            font-size: 2.5rem;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .logout-button {
+            background-color: #ff0000;
+            color: white;
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: inline-block;
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+        }
+
+        .logout-button:hover {
+            background-color: #bc0d0d;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 4rem;
+        }
+
+        .menu button {
+            background-color: #50a3a2;
+            color: white;
+            padding: 1.5rem 3rem;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 2.5rem; /* Increased margin between buttons */
+            font-size: 1.2rem;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu button:hover {
+            background-color: #408c89;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>HOMECOOK DELIVERY SYSTEM</h1>
+        <h2>Vendor Home Page</h2>
+        <!-- Logout Button -->
+        <a href="/vendor-logout" class="logout-button">Logout</a>
+    </div>
+    <div style="text-align: center">
+        <h1>Welcome, {{ name }}</h1>
+        <p>Vendor ID: {{ id }}</p>
+    </div>
+
+    <div class="menu">
+        <!-- Vendor Home Buttons -->
+        <a href="VendorCreateMenu.html"><button>Create Menu</button></a>
+        <a href="VendorUpdateMenu.html"><button>Update Menu</button></a>
+        <a href="VendorOrderPage.html"><button>Orders</button></a>
+    </div>
+</div>
+
+</body>
+</html>
+
+

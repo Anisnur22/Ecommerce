@@ -1,0 +1,167 @@
+<!--VendorCreateMenu.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMECOOK DELIVERY SYSTEM | Create Menu</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #50a3a2;
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 2px;
+        }
+
+        .header h2 {
+            margin: 1rem 0;
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .logout-button {
+            background-color: #ff0000;
+            color: white;
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: inline-block;
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-button:hover {
+            background-color: #bc0d0d;
+        }
+
+        .Back-button {
+            background-color: #04453a;
+            color: white;
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: inline-block;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+
+        .Back-button:hover {
+            background-color: #aec56b;
+        }
+
+        main {
+            padding: 2rem;
+            background-color: white;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.25rem;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #50a3a2;
+            color: white;
+            padding: 0.5rem;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #408c89;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>HOMECOOK DELIVERY SYSTEM</h1>
+        <h2>Vendor Create Menu Page</h2>
+        <!-- Logout Button -->
+        <a href="VendorLogin.html" class="logout-button">Logout</a>
+         <!-- Back Button -->
+    <a href="VendorHomePage.html" class="Back-button"> Back</a>
+    </div>
+
+    <main>
+        <!-- Create Menu Form -->
+        <form action="MenuCreated.html" method="post">
+            <label for="menu-name">Name</label>
+            <input type="text" id="menu-name" name="menu_name" required>
+
+            <label for="menu-category">Category</label>
+            <input type="text" id="menu-category" name="menu_category" required>
+
+            <label for="menu-price">Price</label>
+            <input type="number" id="menu-price" name="menu_price" min="0" required>
+
+            <label for="menu-description">Description</label>
+            <textarea id="menu-description" name="menu_description" rows="4" required></textarea>
+
+            <input type="submit" value="Save">
+        </form>
+    </main>
+</div>
+
+</body>
+</html>
+

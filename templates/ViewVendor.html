@@ -1,0 +1,181 @@
+<!--ViewVendor.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMECOOK DELIVERY SYSTEM | View Vendors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #50a3a2;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .logout-button {
+            background-color: #f44336;
+            color: white;
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: inline-block;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        .logout-button:hover {
+            background-color: #d32f2f;
+        }
+
+        
+        .Back-button {
+            background-color: #04453a;
+            color: white;
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: inline-block;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+
+        .Back-button:hover {
+            background-color: #aec56b;
+        }
+
+
+        .vendor-list {
+            margin-top: 2rem;
+        }
+
+        .vendor-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .vendor-item:hover {
+            background-color: #f5f5f5;
+        }
+
+        .vendor-info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .food-list {
+            display: none;
+            padding-left: 20px; /* Indentation for food list */
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function toggleFoodList(vendorId) {
+            var foodList = document.getElementById("food-list-" + vendorId);
+            foodList.style.display = (foodList.style.display === 'none' || foodList.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>HOMECOOK DELIVERY SYSTEM</h1>
+            <div class="header">
+                <h2>View Vendor Page</h2>
+            </div>
+        </div>
+    
+        <!-- Logout Button -->
+        <a href="/logout" class="logout-button">Logout</a>
+    
+        <!-- Back Button -->
+        <a href="{{ url_for('home') }}" class="Back-button"> Back</a>
+        
+        <p></p>
+
+        <table border="1">
+            <thead style="background-color: #50a3a2;">
+                <tr>
+                    <th>Vendor ID</th>
+                    <th>Registration ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for vendor in vendors %}
+                <tr>
+                    <td>{{ vendor.VendorID }}</td>
+                    <td>{{ vendor.RegistrationID }}</td>
+                    <td>{{ vendor.Name }}</td>
+                    <td>{{ vendor.Email }}</td>
+                    <td>{{ vendor.PhoneNumber }}</td>
+                    <td>{{ vendor.Address }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <p>MENU</p>
+        <table border="1" style="width: 100%;">
+            <thead style="background-color: #50a3a2;">
+                <tr>
+                    <th>Item ID</th>
+                    <th>Vendor ID</th>
+                    <th>Item Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{ item.ItemID }}</td>
+                    <td>{{ item.VendorID }}</td>
+                    <td>{{ item.ItemName }}</td>
+                    <td>{{ item.ItemPrice }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+
+</body>
+</html>
